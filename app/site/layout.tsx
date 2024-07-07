@@ -5,7 +5,7 @@ import { dark } from "@clerk/themes";
 const AuthLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <ClerkProvider appearance={{ baseTheme: dark }}>
-      <main className="h-full">
+      <main className="h-full ">
         <Navigation />
         {children}
       </main>
