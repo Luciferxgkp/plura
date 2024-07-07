@@ -45,6 +45,7 @@ const Index = async ({
   }
 
   const authUser = await currentUser();
+
   return (
     <div className="flex justify-center items-center mt-4">
       <div className="max-w-[850px] border-[1px] p-4 rounded-xl">
