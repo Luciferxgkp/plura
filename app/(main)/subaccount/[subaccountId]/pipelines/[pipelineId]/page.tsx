@@ -33,9 +33,9 @@ const PipeLineIdPage = async ({ params }: Props) => {
     },
   });
 
-  const lanes = (await getLanesWithTicketsAndTags(
-    params.pipelineId
-  )) as LaneDetail[];
+  const lanes = JSON.parse(
+    await getLanesWithTicketsAndTags(params.pipelineId)
+  ) as LaneDetail[];
 
   return (
     <Tabs defaultValue="view" className="w-full">

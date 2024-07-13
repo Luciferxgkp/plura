@@ -572,7 +572,7 @@ export const getLanesWithTicketsAndTags = async (pipelineId: string) => {
       },
     },
   });
-  return response;
+  return JSON.stringify(response);
 };
 
 export const upsertFunnel = async (
@@ -632,21 +632,22 @@ export const updateLanesOrder = async (lanes: Lane[]) => {
 
 export const updateTicketsOrder = async (tickets: Ticket[]) => {
   try {
-    const updateTrans = tickets.map((ticket, index) =>
+    const updateTrans = tickets.map((ticket) =>
       db.ticket.update({
         where: {
           id: ticket.id,
         },
         data: {
           order: ticket.order,
+          laneId: ticket.laneId,
         },
       })
     );
 
     await db.$transaction(updateTrans);
-    console.log("🟢 Reordered done");
+    console.log("🟢 Done reordered 🟢");
   } catch (error) {
-    console.log(error, "🔴 Could not reorder tickets");
+    console.log(error, "🔴 ERROR UPDATE TICKET ORDER");
   }
 };
 
