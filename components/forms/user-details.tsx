@@ -55,7 +55,7 @@ type Props = {
   id: string | null;
   type: "agency" | "subAccount";
   subAccounts: SubAccount[];
-  userData: Partial<User>;
+  userData?: Partial<User>;
 };
 
 const UserDetails = ({ type, id, subAccounts, userData }: Props) => {
