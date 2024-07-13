@@ -3,6 +3,7 @@ import {
   getAuthUserDetails,
   getUserPermissions,
   __getUsersWithAgencySubAccountPermissionsSidebarOptions,
+  getMedia,
 } from "./queries";
 
 export type NotificationWithUser =
@@ -31,3 +32,7 @@ export type UsersWithAgencySubAccountPermissionsSidebarOptions =
   Prisma.PromiseReturnType<
     typeof __getUsersWithAgencySubAccountPermissionsSidebarOptions
   >;
+
+export type GetMediaFiles = Prisma.PromiseReturnType<typeof getMedia>;
+
+export type CreateMediaType = Prisma.MediaCreateWithoutSubaccountInput;
