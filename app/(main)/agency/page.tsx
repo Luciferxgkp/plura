@@ -1,14 +1,13 @@
 import { currentUser } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
 import { getAuthUserDetails, verifyAndAcceptInvitation } from "@/lib/queries";
-import { Plan } from "@prisma/client";
 import AgencyDetails from "@/components/forms/agency-details";
 
 const Index = async ({
   searchParams,
 }: {
   searchParams: {
-    plan: Plan;
+    plan: string;
     state: string;
     code: string;
   };

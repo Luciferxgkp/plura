@@ -5,7 +5,6 @@ import { redirect } from "next/navigation";
 import {
   Agency,
   Lane,
-  Plan,
   Prisma,
   Role,
   SubAccount,
@@ -230,7 +229,7 @@ export const initUser = async (newUser: Partial<User>) => {
   return response;
 };
 
-export const upsertAgency = async (agency: Agency, price?: Plan) => {
+export const upsertAgency = async (agency: Agency, price?: string) => {
   if (!agency.companyEmail) return null;
 
   try {
