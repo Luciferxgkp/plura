@@ -16,6 +16,7 @@ import {
   getPipelineDetails,
   getTicketsWithTags,
   _getTicketsWithAllRelations,
+  getFunnels,
 } from "./queries";
 import { z } from "zod";
 import Stripe from "stripe";
@@ -120,3 +121,14 @@ export type StripeCustomerType = {
 };
 
 export type PricesList = Stripe.ApiList<Stripe.Price>;
+
+export type FunnelsForSubAccount = Prisma.PromiseReturnType<
+  typeof getFunnels
+>[0];
+
+export type UpsertFunnelPage = Prisma.FunnelPageCreateWithoutFunnelInput;
+
+export const FunnelPageSchema = z.object({
+  name: z.string().min(1),
+  pathName: z.string().optional(),
+});
