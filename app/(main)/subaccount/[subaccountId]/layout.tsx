@@ -8,6 +8,7 @@ import {
   verifyAndAcceptInvitation,
 } from "@/lib/queries";
 import { currentUser } from "@clerk/nextjs/server";
+import { Role } from "@prisma/client";
 import { redirect } from "next/navigation";
 import React from "react";
 
@@ -62,7 +63,11 @@ const SubAccoutIdLayoutPage = async ({ children, params }: Props) => {
     <div className="h-screen overflow-hidden">
       <Sidebar id={params.subaccountId} type="subaccount" />
       <div className="md:pl-[300px]">
-        <Infobar notifications={notifications} />
+        <Infobar
+          notifications={notifications}
+          role={user.privateMetadata.role as Role}
+          subAccountId={params.subaccountId as string}
+        />
         <div className="relative">
           <BlurPage>{children}</BlurPage>
         </div>

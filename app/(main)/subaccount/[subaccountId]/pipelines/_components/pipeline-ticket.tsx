@@ -192,7 +192,9 @@ const PipelineTicket = ({
                               <Contact2 className="mr-2 h-4 w-4 opacity-70" />
                               <span className="text-xs text-muted-foreground">
                                 Joined{" "}
-                                {ticket.Customer?.createdAt.toLocaleDateString()}
+                                {new Date(
+                                  ticket.Customer?.createdAt as Date
+                                ).toLocaleDateString()}
                               </span>
                             </div>
                           </div>

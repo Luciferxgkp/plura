@@ -10,7 +10,7 @@ type Props = {
 const SubaccountPage = async ({ searchParams }: Props) => {
   const agencyId = await verifyAndAcceptInvitation();
 
-  if (agencyId) {
+  if (!agencyId) {
     return <Unauthorized />;
   }
 
