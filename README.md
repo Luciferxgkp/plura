@@ -1,5 +1,5 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
-[plura-screen-capture.webm](https://github.com/user-attachments/assets/dab41050-6e3c-49e6-969c-07b4b561108d)
+https://github.com/user-attachments/assets/dab41050-6e3c-49e6-969c-07b4b561108d
 
 
 ## Getting Started
