@@ -7,6 +7,7 @@ import { v4 } from "uuid";
 import clsx from "clsx";
 import { Badge } from "@/components/ui/badge";
 import { EditorBtns, defaultStyles } from "@/lib/constants";
+import { Trash } from "lucide-react";
 
 type Props = {
   element: EditorElement;
@@ -89,6 +90,13 @@ const TwoColumns = (props: Props) => {
     });
   };
 
+  const handleDeleteElement = () => {
+    dispatch({
+      type: "DELETE_ELEMENT",
+      payload: { elementDetails: props.element },
+    });
+  };
+
   return (
     <div
       style={props.element.styles}
@@ -121,6 +129,16 @@ const TwoColumns = (props: Props) => {
         content.map((childElement) => (
           <RecursiveElement key={childElement.id} element={childElement} />
         ))}
+      {state.editor.selectedElement.id === props.element.id &&
+        !state.editor.liveMode && (
+          <div className="absolute bg-primary px-2.5 py-1 text-xs font-bold  -top-[25px] -right-[1px] rounded-none rounded-t-lg !text-white">
+            <Trash
+              className="cursor-pointer"
+              size={16}
+              onClick={handleDeleteElement}
+            />
+          </div>
+        )}
     </div>
   );
 };
