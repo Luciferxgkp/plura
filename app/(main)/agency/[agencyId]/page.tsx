@@ -92,10 +92,13 @@ const Index = async ({
       .reduce((acc, session) => acc + (session.amount_total || 0), 0)
       .toFixed(2);
 
-    closingRate = +(
-      (totalClosedSessions.length / checkoutSessions.data.length) *
-      100
-    ).toFixed(2);
+    closingRate =
+      totalClosedSessions.length > 0
+        ? +(
+            (totalClosedSessions.length / checkoutSessions.data.length) *
+            100
+          ).toFixed(2)
+        : 0;
   }
   return (
     <div className="relative h-full">

@@ -64,34 +64,22 @@ const Funnels = async ({ params }: { params: { subaccountId: string } }) => {
   if (!funnels) return null;
 
   return (
-    <div className="h-screen overflow-hidden">
-      <Sidebar id={params.subaccountId} type="subaccount" />
-      <div className="md:pl-[300px]">
-        <Infobar
-          notifications={notifications}
-          role={user.privateMetadata.role as Role}
-          subAccountId={params.subaccountId as string}
-        />
-        <div className="relative">
-          <BlurPage>
-            <FunnelsDataTable
-              actionButtonText={
-                <>
-                  <Plus size={15} />
-                  Create Funnel
-                </>
-              }
-              modalChildren={
-                <FunnelForm subAccountId={params.subaccountId}></FunnelForm>
-              }
-              filterValue="name"
-              columns={columns}
-              data={funnels}
-            />
-          </BlurPage>
-        </div>
-      </div>
-    </div>
+    <BlurPage>
+      <FunnelsDataTable
+        actionButtonText={
+          <>
+            <Plus size={15} />
+            Create Funnel
+          </>
+        }
+        modalChildren={
+          <FunnelForm subAccountId={params.subaccountId}></FunnelForm>
+        }
+        filterValue="name"
+        columns={columns}
+        data={funnels}
+      />
+    </BlurPage>
   );
 };
 
