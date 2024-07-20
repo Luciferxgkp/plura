@@ -28,7 +28,7 @@ const FunnelPageId = async ({ params }: Props) => {
   }
 
   return (
-    <div className="fixed top-0 bottom-0 left-0 right-0 bg-background overflow-hidden">
+    <div className="fixed top-[10vh] bottom-0 left-0 right-0 bg-background overflow-hidden">
       <EditorProvider
         subaccountId={params.subaccountId}
         funnelId={params.funnelId}
