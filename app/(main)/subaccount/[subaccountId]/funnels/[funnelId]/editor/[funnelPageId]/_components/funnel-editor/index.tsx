@@ -61,7 +61,7 @@ const FunnelEditor = ({ funnelPageId, liveMode }: Props) => {
   return (
     <div
       className={cn(
-        "use-automation-zoom-in h-full overflow-scroll mr-[385px] bg-background transition-all rounded-md",
+        "use-automation-zoom-in min-h-screen overflow-scroll mr-[385px] bg-background transition-all rounded-md mb-20" ,
         {
           "!pt-[9vh] !mr-0":
             state.editor.previewMode === true || state.editor.liveMode === true,

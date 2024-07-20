@@ -7,6 +7,7 @@ import React from "react";
 import { v4 } from "uuid";
 import Recursive from "./recursive";
 import { Trash } from "lucide-react";
+import { ScrollArea } from "@/components/ui/scroll-area";
 
 type Props = {
   element: EditorElement;
@@ -145,6 +146,22 @@ const Container = ({ element }: Props) => {
           },
         });
         break;
+
+      case "paymentForm":
+        dispatch({
+          type: "ADD_ELEMENT",
+          payload: {
+            containerId: id,
+            elementDetails: {
+              content: [],
+              id: v4(),
+              name: "Payment Form",
+              styles: {},
+              type: "paymentForm",
+            },
+          },
+        });
+        break;
       default:
     }
   };
@@ -178,11 +195,10 @@ const Container = ({ element }: Props) => {
   return (
     <div
       style={styles}
-      className={cn("relative p-4 transition-all group", {
+      className={cn("relative p-4 transition-all group overflow-scroll", {
         "max-w-full w-full": type === "container" || type === "2Col",
         "h-fit": type === "container",
-        "h-full": type === "__body",
-        "overflow-scroll ": type === "__body",
+        "min-h-screen": type === "__body",
         "flex flex-col md:!flex-row": type === "2Col",
         "!border-blue-500":
           state.editor.selectedElement.id === id &&
