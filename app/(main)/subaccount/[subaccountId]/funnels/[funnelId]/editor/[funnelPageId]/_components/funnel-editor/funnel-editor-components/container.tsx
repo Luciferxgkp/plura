@@ -77,6 +77,28 @@ const Container = ({ element }: Props) => {
           },
         });
         break;
+
+      case "link":
+        dispatch({
+          type: "ADD_ELEMENT",
+          payload: {
+            containerId: id,
+            elementDetails: {
+              content: {
+                innerText: "Link Element",
+                href: "#",
+              },
+              id: v4(),
+              name: "Link",
+              styles: {
+                color: "black",
+                ...defaultStyles,
+              },
+              type: "link",
+            },
+          },
+        });
+        break;
       default:
     }
   };

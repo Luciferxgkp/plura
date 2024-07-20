@@ -3,6 +3,7 @@ import React from "react";
 import TextComponent from "./text";
 import Container from "./container";
 import VideoComponent from "./video";
+import LinkComponent from "./link";
 
 type Props = {
   element: EditorElement;
@@ -18,6 +19,8 @@ const Recursive = ({ element }: Props) => {
       return <Container element={element} />;
     case "video":
       return <VideoComponent element={element} />;
+    case "link":
+      return <LinkComponent element={element} />;
     default:
       return null;
   }

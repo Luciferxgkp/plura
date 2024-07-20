@@ -9,6 +9,7 @@ import React from "react";
 import TextPlaceholder from "./text-placeholder";
 import ContainerPlaceHolder from "./container-placeholder";
 import VideoPlaceholder from "./video-placeholder";
+import LinkPlaceholder from "./link-placeholder";
 
 type Props = {};
 
@@ -55,12 +56,12 @@ const ComponentTab = (props: Props) => {
     //   id: "paymentForm",
     //   group: "elements",
     // },
-    // {
-    //   Component: <LinkPlaceholder />,
-    //   label: "Link",
-    //   id: "link",
-    //   group: "elements",
-    // },
+    {
+      Component: <LinkPlaceholder />,
+      label: "Link",
+      id: "link",
+      group: "elements",
+    },
   ];
 
   return (
