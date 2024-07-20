@@ -1,3 +1,4 @@
+"use client";
 import { EditorBtns } from "@/lib/constants";
 import { EditorAction } from "./editor-action";
 import React, { createContext } from "react";
@@ -10,7 +11,7 @@ export type EditorElement = {
   styles: React.CSSProperties;
   name: string;
   type: EditorBtns;
-  content: EditorElement[] | {};
+  content: EditorElement[] | { href?: string };
 };
 
 export type Editor = {
