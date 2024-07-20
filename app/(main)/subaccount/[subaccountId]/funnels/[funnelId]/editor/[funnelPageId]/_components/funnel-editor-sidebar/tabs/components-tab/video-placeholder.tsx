@@ -1,4 +1,4 @@
-import { Youtube } from "lucide-react";
+import { Video } from "lucide-react";
 import React from "react";
 
 type Props = {};
@@ -15,7 +15,7 @@ const VideoPlaceholder = (props: Props) => {
       onDragStart={(e) => handleDragStart(e, "video")}
       className="h-14 w-14 bg-muted rounded-lg flex items-center justify-center"
     >
-      <Youtube size={40} className="text-muted-foreground" />
+      <Video size={40} className="text-muted-foreground" />
     </div>
   );
 };

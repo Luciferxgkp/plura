@@ -10,6 +10,7 @@ import TextPlaceholder from "./text-placeholder";
 import ContainerPlaceHolder from "./container-placeholder";
 import VideoPlaceholder from "./video-placeholder";
 import LinkPlaceholder from "./link-placeholder";
+import TwoColumnsPlaceholder from "./two-col-placeholder";
 
 type Props = {};
 
@@ -32,12 +33,12 @@ const ComponentTab = (props: Props) => {
       id: "container",
       group: "layout",
     },
-    // {
-    //   Component: <TwoColumnsPlaceholder />,
-    //   label: "2 Columns",
-    //   id: "2Col",
-    //   group: "layout",
-    // },
+    {
+      Component: <TwoColumnsPlaceholder />,
+      label: "2 Columns",
+      id: "2Col",
+      group: "layout",
+    },
     {
       Component: <VideoPlaceholder />,
       label: "Video",

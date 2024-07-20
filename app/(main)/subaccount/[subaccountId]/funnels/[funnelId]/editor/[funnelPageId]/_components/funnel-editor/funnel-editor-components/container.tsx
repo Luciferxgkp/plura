@@ -99,6 +99,36 @@ const Container = ({ element }: Props) => {
           },
         });
         break;
+      case "2Col":
+        dispatch({
+          type: "ADD_ELEMENT",
+          payload: {
+            containerId: id,
+            elementDetails: {
+              content: [
+                {
+                  content: [],
+                  id: v4(),
+                  name: "Container",
+                  styles: { ...defaultStyles, width: "100%" },
+                  type: "container",
+                },
+                {
+                  content: [],
+                  id: v4(),
+                  name: "Container",
+                  styles: { ...defaultStyles, width: "100%" },
+                  type: "container",
+                },
+              ],
+              id: v4(),
+              name: "Two Columns",
+              styles: { ...defaultStyles, display: "flex" },
+              type: "2Col",
+            },
+          },
+        });
+        break;
       default:
     }
   };
